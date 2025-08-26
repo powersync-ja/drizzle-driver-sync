@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["DOM", "ES2020", "WebWorker"],
+    "module": "node16",
+    "moduleResolution": "node16",
+    "outDir": "./lib",
+    "strict": true,
+    "target": "es6"
+  },
+  "include": ["src/**/*"]
+}
