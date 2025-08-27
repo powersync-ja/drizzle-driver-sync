@@ -1,5 +1,11 @@
 # @powersync/drizzle-driver-sync
 
+## 0.0.4
+
+### Patch Changes
+
+- 7380867: fix: add ios and android to demo project
+
 ## 0.0.3
 
 ### Patch Changes
