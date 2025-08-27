@@ -8,6 +8,15 @@ The `drizzle-driver-sync` package is currently in an Alpha release.
 
 **Only query support is available at this time.** Support for inserts, updates, and deletes will be added in a future release.
 
+## Demo Project
+A demo project is available in the `demo` folder of this repository. It is a React Native project that uses bare bones React Native to run on iOS and Android.
+
+To run the demo project:
+1. Navigate to the `demo` folder
+2. Run `pnpm install` to install dependencies
+3. Run `pnpm run start` to start the Metro bundler
+4. In another terminal, run `pnpm run ios` or `pnpm run android`
+
 
 ## Getting Started
 
