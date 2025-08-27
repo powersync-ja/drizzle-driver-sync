@@ -10,7 +10,7 @@
 
 ### Patch Changes
 
-- 75a1e12: temporaryly add dist and lib for npm installs from github
+- 75a1e12: temporarily add dist and lib for npm installs from github
 - f75e328: reset version to 0.0.1 after accidental publish of 0.5.0
 - 0a279a6: update lock file
 

@@ -6,12 +6,15 @@ This package (`@powersync/drizzle-driver-sync`) brings the benefits of an ORM th
 
 The `drizzle-driver-sync` package is currently in an Alpha release.
 
+**Only query support is available at this time.** Support for inserts, updates, and deletes will be added in a future release.
+
+
 ## Getting Started
 
 Set up the PowerSync Database and wrap it with Drizzle.
 
 ```js
-import { wrapPowerSyncWithDrizzle } from '@powersync/drizzle-driver';
+import { wrapPowerSyncWithDrizzle } from '@powersync/drizzle-driver-sync';
 import { PowerSyncDatabase } from '@powersync/web';
 import { relations } from 'drizzle-orm';
 import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
@@ -48,7 +51,7 @@ export const drizzleSchema = {
 };
 
 // As an alternative to manually defining a PowerSync schema, generate the local PowerSync schema from the Drizzle schema with the `DrizzleAppSchema` constructor:
-// import { DrizzleAppSchema } from '@powersync/drizzle-driver';
+// import { DrizzleAppSchema } from '@powersync/drizzle-driver-sync';
 // export const AppSchema = new DrizzleAppSchema(drizzleSchema);
 //
 // This is optional, but recommended, since you will only need to maintain one schema on the client-side
@@ -76,7 +79,7 @@ As the PowerSync schema only supports SQLite types (`text`, `integer`, and `real
 To use it, define your Drizzle tables and supply the schema to the `DrizzleAppSchema` function:
 
 ```js
-import { DrizzleAppSchema } from '@powersync/drizzle-driver';
+import { DrizzleAppSchema } from '@powersync/drizzle-driver-sync';
 import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 // Define a Drizzle table
@@ -101,7 +104,7 @@ The PowerSync table definition allows additional options supported by PowerSync'
 They can be specified as follows. Note that these options exclude indexes as they can be specified in a Drizzle table.
 
 ```js
-import { DrizzleAppSchema } from '@powersync/drizzle-driver';
+import { DrizzleAppSchema } from '@powersync/drizzle-driver-sync';
 // import { DrizzleAppSchema, type DrizzleTableWithPowerSyncOptions} from '@powersync/drizzle-driver'; for TypeScript
 
 const listsWithOptions = { tableDefinition: logs, options: { localOnly: true } };
@@ -119,7 +122,7 @@ export const AppSchema = new DrizzleAppSchema(drizzleSchemaWithOptions);
 Drizzle tables can also be converted on a table-by-table basis with `toPowerSyncTable`.
 
 ```js
-import { toPowerSyncTable } from '@powersync/drizzle-driver';
+import { toPowerSyncTable } from '@powersync/drizzle-driver-sync';
 import { Schema } from '@powersync/web';
 import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
@@ -144,7 +147,7 @@ export const AppSchema = new Schema({
 To use Drizzle queries in your hooks and composables, queries need to be converted using `toCompilableQuery`.
 
 ```js
-import { toCompilableQuery } from '@powersync/drizzle-driver';
+import { toCompilableQuery } from '@powersync/drizzle-driver-sync';
 
 const query = db.select().from(lists);
 const { data: listRecords, isLoading } = useQuery(toCompilableQuery(query));
